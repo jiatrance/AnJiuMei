@@ -1,0 +1,124 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!--theme-style-->
+    {% block customcss %}
+    {% endblock %}
+<link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css" media="all" />
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link href='http://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<!-- animation-effect -->
+<link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script>
+ new WOW().init();
+</script>
+<!-- //animation-effect -->
+
+</head>
+<body>
+<!--header-->
+<div class="header" >
+	<div class="head" >
+		<div class="container">
+			<div class="navbar-top">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					  </button>
+						 <div class="navbar-brand logo wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+							<h1 class="animated wow pulse" data-wow-delay=".5s">
+							<a href="{% url 'index' %}">AJM安久美<i>广州安久美建筑工程有限公司</i></a></h1>
+						</div>
+
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					 <ul class="nav navbar-nav link-effect-4">
+					<li class="{% if request.path == '/' %}active {% endif %}"><a href="{% url 'index' %}" data-hover="公司主页">公司主页</a> </li>
+						<li class="{% if request.path|slice:'6' == '/about' %}active {% endif %}"><a href="{% url 'about' %}" data-hover="公司简介">公司简介 </a> </li>
+						<li class="{% if request.path|slice:'8' == '/gallery' %}active {% endif %}"><a href="{% url 'gallery' %}"  data-hover="工程业绩">工程业绩</a></li>
+						<li class="{% if request.path|slice:'9' == '/products' %}active {% endif %}"><a href="{% url 'products' %}" data-hover="产品介绍">产品介绍 </a></li>
+						<li class="{% if request.path|slice:'8' == '/contact' %}active {% endif %}"><a href="{% url 'contact' %}" data-hover="联系我们">联系我们</a></li>
+					  </ul>
+					</div><!-- /.navbar-collapse -->
+				</div>
+
+			<div class="header-left wow fadeInRight animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+					<ul>
+						<li><i class="glyphicon glyphicon-earphone"></i>电话：020-62903786</li>
+					</ul>
+				</div>
+			  <div class="clearfix"></div>
+		</div>
+	</div>
+	</div>
+	<!---->
+{% block content %}
+{% endblock %}
+<div class="contact1">
+	<div class="container">
+	<div class="col-md-6 contact1-left footer1-bottom wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+			<h3>Signup for Newsletter</h3>
+			<form action="#" method="post">
+					<input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}" required="">
+					<input type="submit" value=" ">
+			</form>
+			<a href="#"><span>Facebook</span></a>
+			<a href="#"><span>Pinterest</span></a>
+			<a href="#"><span>LinkedIn </span></a>
+			<a href="#"><span>Behance</span></a>
+		</div>
+		<div class="col-md-3 contact1-middle wow fadeInRight animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+
+				<h3>Phone/Fax</h3>
+
+
+					<p>手机 : （+86）11111111111 </p>
+					<p>电话 : （020）62903786 </p>
+					<p>传真 : （020）62903796 </p>
+
+
+
+		</div>
+		<div class="col-md-3 contact1-right wow fadeInUp animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+			<h3>Address</h3>
+						<address>
+							广州市花都区新华工业园<br>
+							大布路40号<br>
+							<abbr title="手机">P :</abbr> (86) 11111111111
+						</address>
+
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
+</div>
+<!--copy-->
+	<div class="copy">
+		<p class="footer-grid wow fadeInUp animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">Copyright &copy; 2016.Company name All rights reserved.</p>
+
+	</div>
+<!-- for bootstrap working -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+{% block customjs %}
+{% endblock %}
+<!-- //for bootstrap working -->
+</body>
+</html>
