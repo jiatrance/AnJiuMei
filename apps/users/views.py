@@ -2,7 +2,7 @@ from django.contrib.auth.backends import ModelBackend
 from django.db.models import Q
 from django.shortcuts import render
 from django.views.generic.base import View
-from operation.models import TableOne,TableTwo
+from operation.models import TableOne,TableTwo,SystemType,TypeImage
 
 from users.models import UserProfile
 
@@ -44,4 +44,9 @@ class ContactView(View):
 
 class ProductsView(View):
     def get(self,request):
-        return render(request,'products.html')
+        types=SystemType.objects.all()
+        type_images=TypeImage.objects.all()
+        return render(request,'products.html',{
+            'types':types,
+            'type_images':type_images
+        })

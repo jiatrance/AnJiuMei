@@ -13,10 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
+from django.views.static import serve
 import xadmin
 from users.views import IndexView,AboutView,GalleryView,ContactView,ProductsView
+from AnJiuMei.settings import MEDIA_ROOT,STATICFILES_DIRS
+
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
@@ -25,4 +27,6 @@ urlpatterns = [
     path('gallery',GalleryView.as_view(),name='gallery'),
     path('contact',ContactView.as_view(),name='contact'),
     path('products', ProductsView.as_view(), name='products'),
+    re_path('static/(?P<path>.*)', serve, {'document_root': STATICFILES_DIRS}),
+    re_path('media/(?P<path>.*)', serve, {'document_root': MEDIA_ROOT}),
 ]

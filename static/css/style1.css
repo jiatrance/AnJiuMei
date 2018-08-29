@@ -4,6 +4,56 @@ body{ background-color:#000000}
 	margin: 0 auto;
 }
 
+.grid1 {
+	position: relative;
+	margin: 0 auto;
+}
+
+.grid2 {
+	position: relative;
+	margin: 0 auto;
+}
+
+.grid3 {
+	position: relative;
+	margin: 0 auto;
+}
+
+.grid4 {
+	position: relative;
+	margin: 0 auto;
+}
+
+.grid5 {
+	position: relative;
+	margin: 0 auto;
+}
+
+.grid6 {
+	position: relative;
+	margin: 0 auto;
+}
+
+.grid7 {
+	position: relative;
+	margin: 0 auto;
+}
+
+.grid8 {
+	position: relative;
+	margin: 0 auto;
+}
+
+.grid9 {
+	position: relative;
+	margin: 0 auto;
+}
+
+.grid10 {
+	position: relative;
+	margin: 0 auto;
+}
+
 .js .grid::after {
 	content: '';
 	position: absolute;
@@ -23,7 +73,7 @@ body{ background-color:#000000}
 
 .grid__item {
 	width: 270px;
-	padding: 10px;
+	padding: 5px;
 }
 
 .grid__item--current {

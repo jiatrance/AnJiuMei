@@ -5,13 +5,42 @@
 {% endblock %}
 {% block content %}
 
-<body class="demo-1">
+    <div class="banner-1">
+
+    </div>
 <div class="container">
+<br> <br> <br><br>
+    <h2 class="tit">产品介绍</h2>
+			<div class="ser-t">
+				<b></b>
+				<span><i></i></span>
+				<b class="line"></b>
+			</div>
+    {% for type in types %}
 	<div class="content">
-		<div class="grid">
-			<div class="grid__item" data-size="1280x853"> <a href="{% static 'images/weix/1.png' %}" class="img-wrap"><img src="{% static 'images/weix/1.png' %}" alt="img1" />
-				<div class="description description--grid">Assemblage</div>
-				</a> </div>
+        <div class="page-header">
+            <h3>{{ type.types }}</h3>
+            </div>
+		<div class="grid{{ forloop.counter }}">
+            {% for image in type_images %}
+             {% if image.the_type.name == type.name %}
+                 {% if forloop.counter0|divisibleby:2 %}
+			<div class="grid__item" data-size="800x800"> <a href="{{ image.image.url }}" class="img-wrap">
+                <div class="col-md-12 wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                    <img src="{{ image.image.url }}" alt="img1" />
+                </div>
+				</a>
+            </div>
+                {% else %}
+             <div class="grid__item" data-size="800x800"> <a href="{{ image.image.url }}" class="img-wrap">
+                <div class="col-md-12 wow fadeInRight animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+                    <img src="{{ image.image.url }}" alt="img1" />
+                </div>
+				</a>
+            </div>
+                    {% endif %}
+           {% endif %}
+            {% endfor %}
 		</div>
 		<!-- /grid -->
 		<div class="preview">
@@ -20,6 +49,7 @@
 		</div>
 		<!-- /preview -->
 	</div>
+    {% endfor %}
 </div>
 {% endblock %}
 <!-- /container -->
@@ -47,8 +77,237 @@
 			g.appendChild(circle);
 			previewEl.appendChild(dummy);
 		}
+		new GridFx(document.querySelector('.grid1'), {
+			onInit : function(instance) {
+				createCircleOverlay(instance.previewEl);
+			},
+			onResize : function(instance) {
+				instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+			},
+			onOpenItem : function(instance, item) {
+				// item's image
+				var gridImg = item.querySelector('img'),
+					gridImgOffset = gridImg.getBoundingClientRect(),
+					win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+					SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+					SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
 
-		new GridFx(document.querySelector('.grid'), {
+				SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+				// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+				if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+				else {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+			}
+		});
+
+		new GridFx(document.querySelector('.grid2'), {
+			onInit : function(instance) {
+				createCircleOverlay(instance.previewEl);
+			},
+			onResize : function(instance) {
+				instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+			},
+			onOpenItem : function(instance, item) {
+				// item's image
+				var gridImg = item.querySelector('img'),
+					gridImgOffset = gridImg.getBoundingClientRect(),
+					win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+					SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+					SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+
+				SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+				// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+				if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+				else {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+			}
+		});
+		new GridFx(document.querySelector('.grid3'), {
+			onInit : function(instance) {
+				createCircleOverlay(instance.previewEl);
+			},
+			onResize : function(instance) {
+				instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+			},
+			onOpenItem : function(instance, item) {
+				// item's image
+				var gridImg = item.querySelector('img'),
+					gridImgOffset = gridImg.getBoundingClientRect(),
+					win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+					SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+					SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+
+				SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+				// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+				if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+				else {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+			}
+		});
+
+		new GridFx(document.querySelector('.grid4'), {
+			onInit : function(instance) {
+				createCircleOverlay(instance.previewEl);
+			},
+			onResize : function(instance) {
+				instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+			},
+			onOpenItem : function(instance, item) {
+				// item's image
+				var gridImg = item.querySelector('img'),
+					gridImgOffset = gridImg.getBoundingClientRect(),
+					win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+					SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+					SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+
+				SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+				// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+				if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+				else {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+			}
+		});
+
+		new GridFx(document.querySelector('.grid5'), {
+			onInit : function(instance) {
+				createCircleOverlay(instance.previewEl);
+			},
+			onResize : function(instance) {
+				instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+			},
+			onOpenItem : function(instance, item) {
+				// item's image
+				var gridImg = item.querySelector('img'),
+					gridImgOffset = gridImg.getBoundingClientRect(),
+					win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+					SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+					SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+
+				SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+				// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+				if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+				else {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+			}
+		});
+		new GridFx(document.querySelector('.grid6'), {
+			onInit : function(instance) {
+				createCircleOverlay(instance.previewEl);
+			},
+			onResize : function(instance) {
+				instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+			},
+			onOpenItem : function(instance, item) {
+				// item's image
+				var gridImg = item.querySelector('img'),
+					gridImgOffset = gridImg.getBoundingClientRect(),
+					win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+					SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+					SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+
+				SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+				// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+				if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+				else {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+			}
+		});
+
+		new GridFx(document.querySelector('.grid7'), {
+			onInit : function(instance) {
+				createCircleOverlay(instance.previewEl);
+			},
+			onResize : function(instance) {
+				instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+			},
+			onOpenItem : function(instance, item) {
+				// item's image
+				var gridImg = item.querySelector('img'),
+					gridImgOffset = gridImg.getBoundingClientRect(),
+					win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+					SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+					SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+
+				SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+				// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+				if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+				else {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+			}
+		});
+
+		new GridFx(document.querySelector('.grid8'), {
+			onInit : function(instance) {
+				createCircleOverlay(instance.previewEl);
+			},
+			onResize : function(instance) {
+				instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+			},
+			onOpenItem : function(instance, item) {
+				// item's image
+				var gridImg = item.querySelector('img'),
+					gridImgOffset = gridImg.getBoundingClientRect(),
+					win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+					SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+					SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+
+				SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+				// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+				if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+				else {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+			}
+		});
+		new GridFx(document.querySelector('.grid9'), {
+			onInit : function(instance) {
+				createCircleOverlay(instance.previewEl);
+			},
+			onResize : function(instance) {
+				instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+			},
+			onOpenItem : function(instance, item) {
+				// item's image
+				var gridImg = item.querySelector('img'),
+					gridImgOffset = gridImg.getBoundingClientRect(),
+					win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+					SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+					SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+
+				SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+				// set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+				if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+				else {
+					SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+				}
+			}
+		});
+		new GridFx(document.querySelector('.grid10'), {
 			onInit : function(instance) {
 				createCircleOverlay(instance.previewEl);
 			},
