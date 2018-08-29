@@ -1,62 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4afdf48a-a232-446e-9416-d01551817033" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-05-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-05-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-06_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-06_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-07_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-07_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-08_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-08_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-09_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-09_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-10_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-10_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-11_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-11_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-12_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-12_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-13_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-13_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-14_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-14_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-15_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-15_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-16_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-16_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-17_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-17_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-18_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-18_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-19_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-19_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-20_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/weix/01-20_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnJiuMei/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AnJiuMei/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/operation/adminx.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/operation/adminx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/operation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/operation/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style1.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/weix/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/weix/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/weix/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/weix/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/weix/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/weix/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/weix/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/weix/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/weix/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products.html" afterDir="false" />
-    </list>
+    <list default="true" id="4afdf48a-a232-446e-9416-d01551817033" name="Default" comment="update" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +40,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
+            <state relative-caret-position="585">
               <caret line="184" column="18" lean-forward="true" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
               <folding>
                 <element signature="e#6739#7007#0#HTML" />
@@ -287,6 +232,14 @@
       <option name="presentableId" value="Default" />
       <updated>1535171980021</updated>
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1535563357392</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1535563357392</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -296,7 +249,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32914287" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32914287" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32914287" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32914287" />
@@ -321,6 +274,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/templates/products.html">
@@ -620,7 +577,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
+        <state relative-caret-position="585">
           <caret line="184" column="18" lean-forward="true" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
           <folding>
             <element signature="e#6739#7007#0#HTML" />
